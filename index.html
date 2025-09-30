@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>InBio-Style Hero</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bitcount+Single+Ink:wght@100..900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Alan+Sans:wght@300..900&family=Bitcount+Single+Ink:wght@100..900&display=swap');
+
+        body {
+            font-family: "Alan Sans", sans-serif;
+        }
+
+        .font {
+            font-family: "Bitcount Single Ink", system-ui;
+        }
+
+        .text {
+            color: #FF014F;
+        }
+
+        .icon {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+        }
+
+        .icon i {
+            width: 60px;
+            height: 60px;
+            background: #f1f3f5;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body class="bg-soft text-slate-600">
+    <!-- ====== Top Bar ====== -->
+    <header class="sticky top-0 z-40 bg-[#ECF0F3] backdrop-blur border-b border-red-300 py-3">
+        <div class="mx-auto max-w-[1500px] px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <a href="#" class="flex items-center gap-3">
+                    <span
+                        class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-soft ring-1 ring-slate-200 shadow-soft">
+                        <svg viewBox="0 0 24 24" class="h-6 w-6 text-slate-500">
+                            <path fill="currentColor"
+                                d="M12 12a5 5 0 1 0-5-5 5 5 0 0 0 5 5Zm0 2c-5 0-9 3-9 5v1h18v-1c0-2-4-5-9-5Z" />
+                        </svg>
+                    </span>
+                    <span class="text-lg font-semibold tracking-wide text-ink">Ariful</span>
+                </a>
+
+                <!-- Desktop nav -->
+                <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+                    <a class="hover:text-ink" href="#">HOME</a>
+                    <a class="hover:text-ink" href="#">FEATURES</a>
+                    <a class="hover:text-ink" href="#">PORTFOLIO</a>
+                    <a class="hover:text-ink" href="#">RESUME</a>
+                    <a class="hover:text-ink" href="#">TESTIMONIAL</a>
+                    <a class="hover:text-ink" href="#">CLIENTS</a>
+                    <a class="hover:text-ink" href="#">PRICING</a>
+                    <a class="hover:text-ink" href="#">BLOG</a>
+                    <a class="hover:text-ink" href="#">CONTACTS</a>
+                </nav>
+
+                <div class="hidden md:flex items-center gap-4">
+                    <button
+                        class="relative inline-flex h-10 w-10 items-center justify-center rounded-xl bg-white ring-1 ring-slate-200 shadow-soft">
+                        <svg class="h-5 w-5 text-ink" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.7">
+                            <path d="M6 6h15l-1.5 9h-13z" />
+                            <path d="M6 6l-1-3H2" />
+                            <circle cx="9" cy="20" r="1.5" />
+                            <circle cx="17" cy="20" r="1.5" />
+                        </svg>
+                        <span
+                            class="absolute -top-1 -right-1 inline-flex h-5 min-w-[20px] px-1 items-center justify-center rounded-full bg-accent text-white text-[10px] leading-none">0</span>
+                    </button>
+                    <a href="#"
+                        class="inline-flex items-center rounded-2xl bg-accent px-5 py-2.5 text-white font-semibold shadow-md hover:opacity-95 transition">BUY
+                        NOW</a>
+                </div>
+
+                <!-- Mobile hamburger -->
+                <button id="menuBtn"
+                    class="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-xl bg-white ring-1 ring-slate-200">
+                    <svg class="h-6 w-6 text-ink" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.7">
+                        <path d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile menu -->
+            <div id="mobileMenu" class="md:hidden hidden border-t border-slate-200/70">
+                <div class="py-4 space-y-1 text-sm font-medium">
+                    <a class="block px-2 py-2 hover:bg-soft rounded-lg" href="#">HOME</a>
+                    <a class="block px-2 py-2 hover:bg-soft rounded-lg" href="#">FEATURES</a>
+                    <a class="block px-2 py-2 hover:bg-soft rounded-lg" href="#">PORTFOLIO</a>
+                    <a class="block px-2 py-2 hover:bg-soft rounded-lg" href="#">RESUME</a>
+                    <a class="block px-2 py-2 hover:bg-soft rounded-lg" href="#">CONTACTS</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ====== Hero ====== -->
+    <section class="relative min-h-screen bg-[#ECF0F3] py-16 sm:py-20 lg:py-24">
+        <div class="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-60 items-center">
+            <!-- left side  -->
+            <div>
+                <h3>Welcome to my wourld</h3>
+                <h1 class="font-black text-6xl mt-5 leading-[70px]">Hi, I'm <span class="text">Ariful islam</span> MERN
+                    stack developer</h1>
+                <p class="mt-6">I use animation as a third dimension by which to simplify experiences and kuiding thro
+                    each and every interaction. I’m not adding motion just to spruce things up, but doing it in ways
+                    that.</p>
+
+                <!-- Social icon  -->
+                <!-- Main div  -->
+                <div class="flex gap-60">
+                    <!-- left side -->
+                    <div class="mt-32">
+                        <h3 class="mb-4">Find with me</h3>
+                        <div class="icon">
+                            <i class="fa-brands fa-facebook-f 
+            hover:bg-gradient-to-tr hover:from-[#1877F2] hover:to-[#3b5998] 
+   hover:text-white hover:scale-110 transition-all duration-300"></i>
+                            <i class="fa-brands fa-twitter  hover:bg-gradient-to-tr hover:from-[#1DA1F2] hover:to-[#0d8ddb] 
+   hover:text-white hover:scale-110 transition-all duration-300"></i>
+                            <i class="fa-brands fa-linkedin-in hover:bg-gradient-to-tr hover:from-[#0077B5] hover:to-[#005983] 
+   hover:text-white hover:scale-110 transition-all duration-300"></i>
+                        </div>
+                    </div>
+                    <!-- right side  -->
+                    <div>
+                        <div class="mt-32">
+                            <h3 class="mb-4">Find with me</h3>
+                            <div class="icon">
+                                <i class="fa-brands fa-facebook-f 
+            hover:bg-gradient-to-tr hover:from-[#1877F2] hover:to-[#3b5998] 
+   hover:text-white hover:scale-110 transition-all duration-300"></i>
+                                <i class="fa-brands fa-twitter  hover:bg-gradient-to-tr hover:from-[#1DA1F2] hover:to-[#0d8ddb] 
+   hover:text-white hover:scale-110 transition-all duration-300"></i>
+                                <i class="fa-brands fa-linkedin-in hover:bg-gradient-to-tr hover:from-[#0077B5] hover:to-[#005983] 
+   hover:text-white hover:scale-110 transition-all duration-300"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Right side -->
+            <div class="relative border border-red-200 w-[520px] h-[620px] bg-[#ECF0F3] rounded-3xl shadow-2xl overflow-hidden flex items-center justify-center ml-auto 
+  transition-transform duration-300 hover:scale-105">
+
+                <img class="w-[900px] h-full object-cover rounded-3xl shadow-xl transition-transform duration-300 hover:scale-110"
+                    src="Images/Ariful.png" alt="Hero Image" />
+
+                <!-- Badge -->
+                <div class="absolute -bottom-6 -right-6 h-20 w-20 bg-gradient-to-tr from-[#FF014F] to-[#FF4E00] rounded-full ring-8 ring-white shadow-2xl flex items-center justify-center 
+    transition-transform duration-300 hover:scale-110">
+                    <div class="text-center text-white drop-shadow-md">
+                        <h4 class="font-bold text-lg">3+</h4>
+                        <p class="text-[10px] leading-tight">Years of<br>Experience</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <hr>
+
+    <!-- What can I do section  -->
+    <section class="bg-[#ECF0F3] pb-16">
+        <div class="max-w-[1400px] mx-auto py-10">
+
+            <h3 class="text">FEATURES</h3>
+            <h2 class="text-5xl font-black pt-6 mb-16">What I Do</h2>
+
+            <!-- This is main div  -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- child div 1 -->
+                <div
+                    class="group p-6 h-[400px] bg-[#EBF2F8] border hover:bg-gradient-to-r from-pink-400 via-purple-500 to-indigo-500 rounded-2xl shadow-lg transform transition duration-300 hover:shadow-xl hover:scale-105 text-white">
+
+                    <!-- Icon Circle -->
+                    <div class="mb-4 flex items-center justify-center">
+                        <div
+                            class="w-12 h-12 rounded-full border-4 border-[#FF014F] group-hover:border-white flex items-center justify-center">
+                        </div>
+                    </div>
+
+                    <!-- Title -->
+                    <h3 class="text-2xl font-bold mb-3 text-black group-hover:text-white">Full Stack Developer</h3>
+
+                    <!-- Description -->
+                    <p class="text-lg mb-4 text-gray-600 group-hover:text-white">
+                        I am a Full Stack Developer skilled in both frontend and backend development, creating
+                        responsive, efficient, and scalable web applications using modern technologies.
+                    </p>
+
+                    <!-- Skills -->
+                    <div class="flex flex-wrap gap-2 mb-4 text-black mt-7">
+                        <span
+                            class="px-2 py-1 bg-sky-400 text-white group-hover:text-black group-hover:bg-white rounded-full text-xs">React</span>
+                        <span
+                            class="px-2 py-1 bg-sky-400 text-white group-hover:text-black  group-hover:bg-white rounded-full text-xs">Node.js</span>
+                        <span
+                            class="px-2 py-1 bg-sky-400 text-white group-hover:text-black  group-hover:bg-white rounded-full text-xs">MongoDB</span>
+                        <span
+                            class="px-2 py-1 bg-sky-400 text-white group-hover:text-black  group-hover:bg-white rounded-full text-xs">Tailwind
+                            CSS</span>
+                    </div>
+
+                    <!-- Call-to-Action Button -->
+                    <a href="#"
+                        class="inline-block px-4 mt-5 py-2 bg-green-300 text-purple-600 font-semibold rounded-lg hover:bg-white/80 transition">
+                        Hire Me
+                    </a>
+                </div>
+                <!-- child div 2 -->
+                <div
+                    class="group p-6 h-[400px] bg-[#EBF2F8] border hover:bg-gradient-to-r from-pink-400 via-purple-500 to-indigo-500 rounded-2xl shadow-lg transform transition duration-300 hover:shadow-xl hover:scale-105 text-white">
+
+                    <!-- Icon Circle -->
+                    <div class="mb-4 flex items-center justify-center">
+                        <div
+                            class="w-12 h-12 rounded-full border-4 border-[#FF014F] group-hover:border-white flex items-center justify-center">
+                        </div>
+                    </div>
+
+                    <!-- Title -->
+                    <h3 class="text-2xl font-bold mb-3 text-black group-hover:text-white">Full Stack Developer</h3>
+
+                    <!-- Description -->
+                    <p class="text-lg mb-4 text-gray-600 group-hover:text-white">
+                        I am a Full Stack Developer skilled in both frontend and backend development, creating
+                        responsive, efficient, and scalable web applications using modern technologies.
+                    </p>
+
+                    <!-- Skills -->
+                    <div class="flex flex-wrap gap-2 mb-4 text-black mt-7">
+                        <span
+                            class="px-2 py-1 bg-sky-400 text-white group-hover:text-black group-hover:bg-white rounded-full text-xs">React</span>
+                        <span
+                            class="px-2 py-1 bg-sky-400 text-white group-hover:text-black  group-hover:bg-white rounded-full text-xs">Node.js</span>
+                        <span
+                            class="px-2 py-1 bg-sky-400 text-white group-hover:text-black  group-hover:bg-white rounded-full text-xs">MongoDB</span>
+                        <span
+                            class="px-2 py-1 bg-sky-400 text-white group-hover:text-black  group-hover:bg-white rounded-full text-xs">Tailwind
+                            CSS</span>
+                    </div>
+
+                    <!-- Call-to-Action Button -->
+                    <a href="#"
+                        class="inline-block px-4 mt-5 py-2 bg-green-300 text-purple-600 font-semibold rounded-lg hover:bg-white/80 transition">
+                        Hire Me
+                    </a>
+                </div>
+                <!-- child div 3 -->
+                <div
+                    class="group p-6 h-[400px] bg-[#EBF2F8] border hover:bg-gradient-to-r from-pink-400 via-purple-500 to-indigo-500 rounded-2xl shadow-lg transform transition duration-300 hover:shadow-xl hover:scale-105 text-white">
+
+                    <!-- Icon Circle -->
+                    <div class="mb-4 flex items-center justify-center">
+                        <div
+                            class="w-12 h-12 rounded-full border-4 border-[#FF014F] group-hover:border-white flex items-center justify-center">
+                        </div>
+                    </div>
+
+                    <!-- Title -->
+                    <h3 class="text-2xl font-bold mb-3 text-black group-hover:text-white">Full Stack Developer</h3>
+
+                    <!-- Description -->
+                    <p class="text-lg mb-4 text-gray-600 group-hover:text-white">
+                        I am a Full Stack Developer skilled in both frontend and backend development, creating
+                        responsive, efficient, and scalable web applications using modern technologies.
+                    </p>
+
+                    <!-- Skills -->
+                    <div class="flex flex-wrap gap-2 mb-4 text-black mt-7">
+                        <span
+                            class="px-2 py-1 bg-sky-400 text-white group-hover:text-black group-hover:bg-white rounded-full text-xs">React</span>
+                        <span
+                            class="px-2 py-1 bg-sky-400 text-white group-hover:text-black  group-hover:bg-white rounded-full text-xs">Node.js</span>
+                        <span
+                            class="px-2 py-1 bg-sky-400 text-white group-hover:text-black  group-hover:bg-white rounded-full text-xs">MongoDB</span>
+                        <span
+                            class="px-2 py-1 bg-sky-400 text-white group-hover:text-black  group-hover:bg-white rounded-full text-xs">Tailwind
+                            CSS</span>
+                    </div>
+
+                    <!-- Call-to-Action Button -->
+                    <a href="#"
+                        class="inline-block px-4 mt-5 py-2 bg-green-300 text-purple-600 font-semibold rounded-lg hover:bg-white/80 transition">
+                        Hire Me
+                    </a>
+                </div>
+                <!-- child div 4 -->
+                <div
+                    class="group p-6 h-[400px] bg-[#EBF2F8] border hover:bg-gradient-to-r from-pink-400 via-purple-500 to-indigo-500 rounded-2xl shadow-lg transform transition duration-300 hover:shadow-xl hover:scale-105 text-white">
+
+                    <!-- Icon Circle -->
+                    <div class="mb-4 flex items-center justify-center">
+                        <div
+                            class="w-12 h-12 rounded-full border-4 border-[#FF014F] group-hover:border-white flex items-center justify-center">
+                        </div>
+                    </div>
+
+                    <!-- Title -->
+                    <h3 class="text-2xl font-bold mb-3 text-black group-hover:text-white">Full Stack Developer</h3>
+
+                    <!-- Description -->
+                    <p class="text-lg mb-4 text-gray-600 group-hover:text-white">
+                        I am a Full Stack Developer skilled in both frontend and backend development, creating
+                        responsive, efficient, and scalable web applications using modern technologies.
+                    </p>
+
+                    <!-- Skills -->
+                    <div class="flex flex-wrap gap-2 mb-4 text-black mt-7">
+                        <span
+                            class="px-2 py-1 bg-sky-400 text-white group-hover:text-black group-hover:bg-white rounded-full text-xs">React</span>
+                        <span
+                            class="px-2 py-1 bg-sky-400 text-white group-hover:text-black  group-hover:bg-white rounded-full text-xs">Node.js</span>
+                        <span
+                            class="px-2 py-1 bg-sky-400 text-white group-hover:text-black  group-hover:bg-white rounded-full text-xs">MongoDB</span>
+                        <span
+                            class="px-2 py-1 bg-sky-400 text-white group-hover:text-black  group-hover:bg-white rounded-full text-xs">Tailwind
+                            CSS</span>
+                    </div>
+
+                    <!-- Call-to-Action Button -->
+                    <a href="#"
+                        class="inline-block px-4 mt-5 py-2 bg-green-300 text-purple-600 font-semibold rounded-lg hover:bg-white/80 transition">
+                        Hire Me
+                    </a>
+                </div>
+                <!-- child div 5 -->
+                <div
+                    class="group p-6 h-[400px] bg-[#EBF2F8] border hover:bg-gradient-to-r from-pink-400 via-purple-500 to-indigo-500 rounded-2xl shadow-lg transform transition duration-300 hover:shadow-xl hover:scale-105 text-white">
+
+                    <!-- Icon Circle -->
+                    <div class="mb-4 flex items-center justify-center">
+                        <div
+                            class="w-12 h-12 rounded-full border-4 border-[#FF014F] group-hover:border-white flex items-center justify-center">
+                        </div>
+                    </div>
+
+                    <!-- Title -->
+                    <h3 class="text-2xl font-bold mb-3 text-black group-hover:text-white">Full Stack Developer</h3>
+
+                    <!-- Description -->
+                    <p class="text-lg mb-4 text-gray-600 group-hover:text-white">
+                        I am a Full Stack Developer skilled in both frontend and backend development, creating
+                        responsive, efficient, and scalable web applications using modern technologies.
+                    </p>
+
+                    <!-- Skills -->
+                    <div class="flex flex-wrap gap-2 mb-4 text-black mt-7">
+                        <span
+                            class="px-2 py-1 bg-sky-400 text-white group-hover:text-black group-hover:bg-white rounded-full text-xs">React</span>
+                        <span
+                            class="px-2 py-1 bg-sky-400 text-white group-hover:text-black  group-hover:bg-white rounded-full text-xs">Node.js</span>
+                        <span
+                            class="px-2 py-1 bg-sky-400 text-white group-hover:text-black  group-hover:bg-white rounded-full text-xs">MongoDB</span>
+                        <span
+                            class="px-2 py-1 bg-sky-400 text-white group-hover:text-black  group-hover:bg-white rounded-full text-xs">Tailwind
+                            CSS</span>
+                    </div>
+
+                    <!-- Call-to-Action Button -->
+                    <a href="#"
+                        class="inline-block px-4 mt-5 py-2 bg-green-300 text-purple-600 font-semibold rounded-lg hover:bg-white/80 transition">
+                        Hire Me
+                    </a>
+                </div>
+                <!-- child div 6 -->
+                <div
+                    class="group p-6 h-[400px] bg-[#EBF2F8] border hover:bg-gradient-to-r from-pink-400 via-purple-500 to-indigo-500 rounded-2xl shadow-lg transform transition duration-300 hover:shadow-xl hover:scale-105 text-white">
+
+                    <!-- Icon Circle -->
+                    <div class="mb-4 flex items-center justify-center">
+                        <div
+                            class="w-12 h-12 rounded-full border-4 border-[#FF014F] group-hover:border-white flex items-center justify-center">
+                        </div>
+                    </div>
+
+                    <!-- Title -->
+                    <h3 class="text-2xl font-bold mb-3 text-black group-hover:text-white">Full Stack Developer</h3>
+
+                    <!-- Description -->
+                    <p class="text-lg mb-4 text-gray-600 group-hover:text-white">
+                        I am a Full Stack Developer skilled in both frontend and backend development, creating
+                        responsive, efficient, and scalable web applications using modern technologies.
+                    </p>
+
+                    <!-- Skills -->
+                    <div class="flex flex-wrap gap-2 mb-4 text-black mt-7">
+                        <span
+                            class="px-2 py-1 bg-sky-400 text-white group-hover:text-black group-hover:bg-white rounded-full text-xs">React</span>
+                        <span
+                            class="px-2 py-1 bg-sky-400 text-white group-hover:text-black  group-hover:bg-white rounded-full text-xs">Node.js</span>
+                        <span
+                            class="px-2 py-1 bg-sky-400 text-white group-hover:text-black  group-hover:bg-white rounded-full text-xs">MongoDB</span>
+                        <span
+                            class="px-2 py-1 bg-sky-400 text-white group-hover:text-black  group-hover:bg-white rounded-full text-xs">Tailwind
+                            CSS</span>
+                    </div>
+
+                    <!-- Call-to-Action Button -->
+                    <a href="#"
+                        class="inline-block px-4 mt-5 py-2 bg-green-300 text-purple-600 font-semibold rounded-lg hover:bg-white/80 transition">
+                        Hire Me
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr>
+    <!-- My Portfolio section  -->
+    <section class="bg-[#ECF0F3] py-16">
+        <div class="max-w-[1200px] mx-auto">
+            <div class="text-center mb-10">
+                <h2 class="text mb-5">Visit my portfolio and keep your feedback</h2>
+                <h2 class="font-black text-5xl">My Portfolio</h2>
+            </div>
+
+            <!-- Main grid div  -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Card 1 -->
+                <div
+                    class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300">
+                    <img class="w-full h-48 duration-300 hover:scale-110 object-cover" src="Images/3423878.jpg" alt="">
+                    <div class="p-6">
+                        <h2 class="text-xl font-semibold text-gray-800 mb-2">Real state</h2>
+                        <p class="text-gray-600 mb-4">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde,
+                            deserunt.</p>
+                        <div class="flex justify-between my-5">
+                            <h2 class="text font-bold">GALLERY</h2>
+                            <h2><i class="fa-regular fa-heart"></i> 1500</h2>
+                        </div>
+                        <a href="#"
+                            class="inline-block px-4 py-2 bg-green-400 text-white rounded hover:bg-blue-600 transition-colors duration-300">View</a>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div
+                    class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300">
+                    <img class="w-full h-48 duration-300 hover:scale-110 object-cover" src="Images/3496219.jpg"
+                        alt="Card Image 1">
+                    <div class="p-6">
+                        <h2 class="text-xl font-semibold text-gray-800 mb-2">Real state</h2>
+                        <p class="text-gray-600 mb-4">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde,
+                            deserunt.</p>
+                        <div class="flex justify-between my-5">
+                            <h2 class="text font-bold">GALLERY</h2>
+                            <h2><i class="fa-regular fa-heart"></i> 1500</h2>
+                        </div>
+                        <a href="#"
+                            class="inline-block px-4 py-2 bg-green-400 text-white rounded hover:bg-blue-600 transition-colors duration-300">View</a>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div
+                    class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300">
+                    <img class="w-full h-48 duration-300 hover:scale-110 object-cover" src="Images/3554404.jpg"
+                        alt="Card Image 1">
+                    <div class="p-6">
+                        <h2 class="text-xl font-semibold text-gray-800 mb-2">Real state</h2>
+                        <p class="text-gray-600 mb-4">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde,
+                            deserunt.</p>
+                        <div class="flex justify-between my-5">
+                            <h2 class="text font-bold">GALLERY</h2>
+                            <h2><i class="fa-regular fa-heart"></i> 1500</h2>
+                        </div>
+                        <a href="#"
+                            class="inline-block px-4 py-2 bg-green-400 text-white rounded hover:bg-blue-600 transition-colors duration-300">View</a>
+                    </div>
+                </div>
+                <!-- Card 4 -->
+                <div
+                    class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300">
+                    <img class="w-full h-48 duration-300 hover:scale-110 object-cover" src="Images/3569112.jpg"
+                        alt="Card Image 1">
+                    <div class="p-6">
+                        <h2 class="text-xl font-semibold text-gray-800 mb-2">Real state</h2>
+                        <p class="text-gray-600 mb-4">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde,
+                            deserunt.</p>
+                        <div class="flex justify-between my-5">
+                            <h2 class="text font-bold">GALLERY</h2>
+                            <h2><i class="fa-regular fa-heart"></i> 1500</h2>
+                        </div>
+                        <a href="#"
+                            class="inline-block px-4 py-2 bg-green-400 text-white rounded hover:bg-blue-600 transition-colors duration-300">View</a>
+                    </div>
+                </div>
+                <!-- Card 5 -->
+                <div
+                    class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300">
+                    <img class="w-full h-48 duration-300 hover:scale-110 object-cover" src="Images/3786658.jpg"
+                        alt="Card Image 1">
+                    <div class="p-6">
+                        <h2 class="text-xl font-semibold text-gray-800 mb-2">Real state</h2>
+                        <p class="text-gray-600 mb-4">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde,
+                            deserunt.</p>
+                        <div class="flex justify-between my-5">
+                            <h2 class="text font-bold">GALLERY</h2>
+                            <h2><i class="fa-regular fa-heart"></i> 1500</h2>
+                        </div>
+                        <a href="#"
+                            class="inline-block px-4 py-2 bg-green-400 text-white rounded hover:bg-blue-600 transition-colors duration-300">View</a>
+                    </div>
+                </div>
+                <!-- Card 6 -->
+                <div
+                    class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300">
+                    <img class="w-full h-48 duration-300 hover:scale-110 object-cover" src="Images/3629578.jpg"
+                        alt="Card Image 1">
+                    <div class="p-6">
+                        <h2 class="text-xl font-semibold text-gray-800 mb-2">Real state</h2>
+                        <p class="text-gray-600 mb-4">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde,
+                            deserunt.</p>
+                        <div class="flex justify-between my-5">
+                            <h2 class="text font-bold">GALLERY</h2>
+                            <h2><i class="fa-regular fa-heart"></i> 1500</h2>
+                        </div>
+                        <a href="#"
+                            class="inline-block px-4 py-2 bg-green-400 text-white rounded hover:bg-blue-600 transition-colors duration-300">View</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr>
+
+    <!-- My Resume seciton  -->
+    <section class="bg-[#ECF0F3] py-16">
+        <div class="text-center py-6">
+            <h2 class="text">7+ Years of Experience</h2>
+            <h1 class="text-5xl font-black mt-5">My Resume</h1>
+        </div>
+        <div>
+            <div class="max-w-6xl mx-auto py-12 px-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-20">
+                    <!-- Education Section -->
+                    <div>
+                        <h2 class="text-red-500 text-sm font-medium">1998 - 2010</span>
+                            <h2 class="text-5xl font-bold text-gray-900 mt-4 mb-6"> Educatio Quality </h2>
+
+                            <!-- Card -->
+                            <div class="relative space-y-6">
+                                <div class="absolute w-1 h-full -left-8 bg-red-400"></div>
+                                <div
+                                    class="group relative bg-gradient-to-r from-[#ffff] via-[#ffff] to-[#ECF0F3] shadow-md rounded-xl p-6 relative">
+                                    <h3 class="text-2xl mb-4 font-semibold">BSc in Computer Science</h3>
+                                    <div class="absolute w-8 h-1 bg-red-400 -left-8"></div>
+                                    <div
+                                        class="absolute bg-white group-hover:bg-green-500 w-4 h-4 rounded-full border-4 border-[#FF014F] rounded-full bg-red-400 -left-[38px] top-[66px]">
+                                    </div>
+                                    <p class="text-sm text-gray-500 mb-6">University of DVI (2006 - 2010)</p>
+                                    <hr>
+                                    <p class="text-gray-500 text-lg mt-6">
+                                        The training provided by universities in order to prepare people to work in
+                                        various
+                                        sectors of the economy or areas of culture.
+                                    </p>
+                                    <span
+                                        class="absolute top-4 right-4 bg-pink-100 text-pink-600 font-bold text-sm px-3 py-1 rounded-md">3.90/4</span>
+                                </div>
+
+                                <div
+                                    class="group relative bg-gradient-to-r from-[#ffff] via-[#ffff] to-[#ECF0F3] shadow-md rounded-xl p-6 relative">
+                                    <h3 class="text-2xl mb-4 font-semibold">BSc in Computer Science</h3>
+                                    <div class="absolute w-8 h-1 bg-red-400 -left-8"></div>
+                                    <div
+                                        class="absolute bg-white group-hover:bg-green-500 w-4 h-4 rounded-full border-4 border-[#FF014F] rounded-full bg-red-400 -left-[38px] top-[66px]">
+                                    </div>
+                                    <p class="text-sm text-gray-500 mb-6">University of DVI (2006 - 2010)</p>
+                                    <hr>
+                                    <p class="text-gray-500 text-lg mt-6">
+                                        The training provided by universities in order to prepare people to work in
+                                        various
+                                        sectors of the economy or areas of culture.
+                                    </p>
+                                    <span
+                                        class="absolute top-4 right-4 bg-pink-100 text-pink-600 font-bold text-sm px-3 py-1 rounded-md">3.90/4</span>
+                                </div>
+
+                                <div
+                                    class="group relative bg-gradient-to-r from-[#ffff] via-[#ffff] to-[#ECF0F3] shadow-md rounded-xl p-6 relative">
+                                    <h3 class="text-2xl mb-4 font-semibold">BSc in Computer Science</h3>
+                                    <div class="absolute w-8 h-1 bg-red-400 -left-8"></div>
+                                    <div
+                                        class="absolute bg-white group-hover:bg-green-500 w-4 h-4 rounded-full border-4 border-[#FF014F] rounded-full bg-red-400 -left-[38px] top-[66px]">
+                                    </div>
+                                    <p class="text-sm text-gray-500 mb-6">University of DVI (2006 - 2010)</p>
+                                    <hr>
+                                    <p class="text-gray-500 text-lg mt-6">
+                                        The training provided by universities in order to prepare people to work in
+                                        various
+                                        sectors of the economy or areas of culture.
+                                    </p>
+                                    <span
+                                        class="absolute top-4 right-4 bg-pink-100 text-pink-600 font-bold text-sm px-3 py-1 rounded-md">3.90/4</span>
+                                </div>
+                            </div>
+                    </div>
+
+                    <!-- Job Section -->
+                    <div>
+                        <h2 class="text-red-500 text-sm font-medium">1998 - 2010</span>
+                            <h2 class="text-5xl font-bold text-gray-900 mt-4 mb-6"> Educatio Quality </h2>
+
+                            <!-- Card -->
+                            <div class="relative space-y-6">
+                                <div class="absolute w-1 h-full -left-8 bg-red-400"></div>
+                                <div
+                                    class="group relative bg-gradient-to-r from-[#ffff] via-[#ffff] to-[#ECF0F3] shadow-md rounded-xl p-6 relative">
+                                    <h3 class="text-2xl mb-4 font-semibold">BSc in Computer Science</h3>
+                                    <div class="absolute w-8 h-1 bg-red-400 -left-8"></div>
+                                    <div
+                                        class="absolute bg-white group-hover:bg-green-500 w-4 h-4 rounded-full border-4 border-[#FF014F] rounded-full bg-red-400 -left-[38px] top-[66px]">
+                                    </div>
+                                    <p class="text-sm text-gray-500 mb-6">University of DVI (2006 - 2010)</p>
+                                    <hr>
+                                    <p class="text-gray-500 text-lg mt-6">
+                                        The training provided by universities in order to prepare people to work in
+                                        various
+                                        sectors of the economy or areas of culture.
+                                    </p>
+                                    <span
+                                        class="absolute top-4 right-4 bg-pink-100 text-pink-600 font-bold text-sm px-3 py-1 rounded-md">3.90/4</span>
+                                </div>
+
+                                <div
+                                    class="group relative bg-gradient-to-r from-[#ffff] via-[#ffff] to-[#ECF0F3] shadow-md rounded-xl p-6 relative">
+                                    <h3 class="text-2xl mb-4 font-semibold">BSc in Computer Science</h3>
+                                    <div class="absolute w-8 h-1 bg-red-400 -left-8"></div>
+                                    <div
+                                        class="absolute bg-white group-hover:bg-green-500 w-4 h-4 rounded-full border-4 border-[#FF014F] rounded-full bg-red-400 -left-[38px] top-[66px]">
+                                    </div>
+                                    <p class="text-sm text-gray-500 mb-6">University of DVI (2006 - 2010)</p>
+                                    <hr>
+                                    <p class="text-gray-500 text-lg mt-6">
+                                        The training provided by universities in order to prepare people to work in
+                                        various
+                                        sectors of the economy or areas of culture.
+                                    </p>
+                                    <span
+                                        class="absolute top-4 right-4 bg-pink-100 text-pink-600 font-bold text-sm px-3 py-1 rounded-md">3.90/4</span>
+                                </div>
+
+                                <div
+                                    class="group relative bg-gradient-to-r from-[#ffff] via-[#ffff] to-[#ECF0F3] shadow-md rounded-xl p-6 relative">
+                                    <h3 class="text-2xl mb-4 font-semibold">BSc in Computer Science</h3>
+                                    <div class="absolute w-8 h-1 bg-red-400 -left-8"></div>
+                                    <div
+                                        class="absolute bg-white group-hover:bg-green-500 w-4 h-4 rounded-full border-4 border-[#FF014F] rounded-full bg-red-400 -left-[38px] top-[66px]">
+                                    </div>
+                                    <p class="text-sm text-gray-500 mb-6">University of DVI (2006 - 2010)</p>
+                                    <hr>
+                                    <p class="text-gray-500 text-lg mt-6">
+                                        The training provided by universities in order to prepare people to work in
+                                        various
+                                        sectors of the economy or areas of culture.
+                                    </p>
+                                    <span
+                                        class="absolute top-4 right-4 bg-pink-100 text-pink-600 font-bold text-sm px-3 py-1 rounded-md">3.90/4</span>
+                                </div>
+                            </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr>
+
+    <!-- My resume end  -->
+    <!-- My blog section start  -->
+    <section class="bg-[#ECF0F3] py-16">
+        <div class="max-w-[1200px] mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text mb-4">Visit my blog and keep your feedback</h2>
+                <h1 class="text-5xl font-black">My Blog</h1>
+            </div>
+
+            <!-- Main content  -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- blog 1  -->
+                <div class="bg-white p-6 rounded-2xl">
+                    <div class="overflow-hidden">
+                        <img class="w-full h-[230px] rounded-2xl hover:scale-110 duration-300 object-cover"
+                            src="Images/computer-program-coding-screen.jpg" alt="coding">
+                    </div>
+                    <!-- content  -->
+                    <div class="mt-6">
+                        <div class="flex justify-between">
+                            <h2 class="text">DEVELOPMENT</h2>
+                            <h2><i class="fa-solid fa-clock"></i> 4 min read</h2>
+                        </div>
+                        <h1 class="text-2xl text-black mt-6">Why best MERN</h1>
+                        <button class="mt-4 bg-[#FF014F] text-white px-4 py-2 rounded-xl">
+                            More....
+                        </button>
+                    </div>
+                </div>
+
+                <!-- blog 2  -->
+                <div class="bg-white p-6 rounded-2xl">
+                    <div class="overflow-hidden">
+                        <img class="w-full h-[230px] hover:scale-110 duration-300 object-cover"
+                            src="Images/programming-background-collage.jpg" alt="coding">
+                    </div>
+                    <!-- content  -->
+                    <div class="mt-6">
+                        <div class="flex justify-between">
+                            <h2 class="text">DEVELOPMENT</h2>
+                            <h2><i class="fa-solid fa-clock"></i> 4 min read</h2>
+                        </div>
+                        <h1 class="text-2xl text-black mt-6">Why best MERN</h1>
+                        <button class="mt-4 bg-[#FF014F] text-white px-4 py-2 rounded-xl">
+                            More....
+                        </button>
+                    </div>
+                </div>
+
+                <!-- blog 3  -->
+                <div class="bg-white p-6 rounded-2xl">
+                    <div class="overflow-hidden">
+                        <img class="w-full h-[230px] hover:scale-110 duration-300 object-cover"
+                            src="Images/programming-background-concept.jpg" alt="coding">
+                    </div>
+                    <!-- content  -->
+                    <div class="mt-6">
+                        <div class="flex justify-between">
+                            <h2 class="text">DEVELOPMENT</h2>
+                            <h2><i class="fa-solid fa-clock"></i> 4 min read</h2>
+                        </div>
+                        <h1 class="text-2xl text-black mt-6">Why best MERN</h1>
+                        <button class="mt-4 bg-[#FF014F] text-white px-4 py-2 rounded-xl">
+                            More....
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- My blog section is end  -->
+
+    <hr>
+
+    <!-- Contact section is start  -->
+    <section class="bg-[#ECF0F3] py-16">
+        <div class="max-w-[1200px] mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text">CONTACT</h2>
+                <h2 class="text-5xl font-black mt-4">Contact With Me</h2>
+            </div>
+            <!-- Main div  -->
+            <div class="flex gap-10">
+                <!-- left side  -->
+                <div class="bg-white p-7 rounded-2xl">
+                    <div class="mb-6">
+                        <img class="w-[340px] rounded-2xl" src="Images/computer-program-coding-screen.jpg" alt="">
+                    </div>
+                    <!-- content  -->
+                    <div>
+                        <h2 class="text-3xl font-bold">Nevine Acotanza</h2>
+                        <h2 class="text mt-4">Chief Operating Officer</h2>
+                        <p class="mt-4">I am available for freelance work. Connectbr <br> with me via and call in to my
+                            account.</p>
+                        <p class="mt-4">Phone <span>+5348904905</span></p>
+                        <p class="mt-4">Email <span class="hover:underline">admin@example.com</span></p>
+
+                        <!-- Social icons  -->
+                        <div class="mt-10 text-2xl">
+                            <div>
+                                <h3 class="mb-4">Find with me</h3>
+                                <div class="icon">
+                                    <i class="fa-brands fa-facebook-f 
+            hover:bg-gradient-to-tr hover:from-[#1877F2] hover:to-[#3b5998] 
+   hover:text-white hover:scale-110 transition-all duration-300"></i>
+                                    <i class="fa-brands fa-twitter  hover:bg-gradient-to-tr hover:from-[#1DA1F2] hover:to-[#0d8ddb] 
+   hover:text-white hover:scale-110 transition-all duration-300"></i>
+                                    <i class="fa-brands fa-linkedin-in hover:bg-gradient-to-tr hover:from-[#0077B5] hover:to-[#005983] 
+   hover:text-white hover:scale-110 transition-all duration-300"></i>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- right side  -->
+                <div class="bg-white w-full p-6 rounded-2xl">
+                    <form>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div>
+                                <label for="name">Your name</label><br>
+                                <input class="border border-gray-300 w-full mt-4 py-3 rounded-lg" type="text" name="" id="">
+                            </div>
+                            <div class="w-full"> 
+                                <label for="name">Phone Number</label><br>
+                                <input class="border border-gray-300 w-full mt-4 py-3 rounded-lg" type="number" name="" id="">
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <label for="email">Email</label>
+                            <input class="w-full border border-gray-300 w-full mt-4 py-3 rounded-lg" type="email" name="" id="">
+                        </div> 
+
+                        <div class="mt-4">
+                            <label for="email">Subject</label>
+                            <input class="w-full border border-gray-300 w-full mt-4 py-3 rounded-lg" type="email" name="" id="">
+                        </div> 
+
+                        <div class="mt-4">
+                            <label for="messae">Your Message</label><br>
+                            <textarea rows="9" class="border border-gray-300 w-full mt-4 rounded-lg resize-none" name="" id=""></textarea>
+                        </div> 
+                        <input class="w-full bg-[#FF014F] py-3 mt-4 rounded-lg text-white" type="submit" value="Send Message" name="" id="">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <footer class="py-10 text-center text-sm text">&copy Md Ariful islam</footer>
+
+    <!-- Small JS function -->
+    <script>
+        function toggleMenu() {
+            document.getElementById("mobileMenu").classList.toggle("hidden");
+        }
+        document.getElementById("menuBtn").addEventListener("click", toggleMenu);
+    </script>
+</body>
+
+</html>
